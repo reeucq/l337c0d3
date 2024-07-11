@@ -84,3 +84,22 @@ class Solution {
 }
 
 ```
+
+### Follow-up - Pair with Max Sum
+
+```java
+class Solution {
+
+    public static long pairWithMaxSum(long arr[], long N) {
+        long maxSum = 0;
+        long curSum = 0;
+
+        for(int k = 0; k < N-1; k++) {
+            curSum = arr[k] + arr[k+1];
+            maxSum = Math.max(maxSum,curSum);
+        }
+
+        return maxSum;
+    }
+}
+```
