@@ -21,23 +21,17 @@ Given an integer array `nums`, move all 0's to the end of it while maintaining t
 ```java
 class Solution {
     public void moveZeroes(int[] nums) {
-        int zeroIdx = -1;
-        for(int i = 0; i < nums.length; i++) {
-            if(nums[i] == 0) {
-                zeroIdx = i;
-                break;
+        int[] result = new int[nums.length];
+        int idx = 0;
+        for (int num : nums) {
+            if (num != 0) {
+                result[idx++] = num;
             }
         }
-
-        if(zeroIdx == -1) return;
-
-        for(int i = zeroIdx+1; i < nums.length; i++) {
-            if(nums[i] != 0) {
-                nums[zeroIdx] = nums[i];
-                nums[i] = 0;
-                zeroIdx++;
-            }
+        for (int i = idx; i < nums.length; i++) {
+            result[i] = 0;
         }
+        System.arraycopy(result, 0, nums, 0, nums.length);
     }
 }
 ```
