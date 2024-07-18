@@ -53,6 +53,7 @@ public int search(int[] nums, int target) {
 ```python
 def binary_search(arr, target, find_type):
     left, right = 0, len(arr) - 1
+    # in case of upper bound, always initialize result to nums.length, altho it usually depends on the problem
     result = -1
 
     while left <= right:
